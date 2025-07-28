@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Exchange - Naira ⇄ Cedis | Glimswave</title>
-    <meta name="description" content="Exchange between Nigerian Naira and Ghanaian Cedis with the best rates. Fast, secure currency conversion with instant processing.">
+    <meta name="description"
+        content="Exchange between Nigerian Naira and Ghanaian Cedis with the best rates. Fast, secure currency conversion with instant processing.">
     <link rel="shortcut icon" href="../public/icon.svg" type="image/x-icon">
 
     <!-- Tailwind CSS -->
@@ -37,7 +39,8 @@
     </script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <style>
         .gradient-text {
@@ -100,6 +103,7 @@
         }
     </style>
 </head>
+
 <body class="font-sans antialiased bg-white">
     <!-- Navigation -->
     <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100/50 shadow-sm">
@@ -112,11 +116,16 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="../index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Home</a>
-                    <a href="../index.html#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Services</a>
-                    <a href="../index.html#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">About</a>
-                    <a href="../index.html#team" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Team</a>
-                    <a href="../index.html#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Contact</a>
+                    <a href="../index.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Home</a>
+                    <a href="../index.html#services"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Services</a>
+                    <a href="../index.html#about"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">About</a>
+                    <a href="../index.html#team"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Team</a>
+                    <a href="../index.html#contact"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Contact</a>
                 </div>
 
                 <!-- CTA Button -->
@@ -124,7 +133,8 @@
                     <span class="hidden md:block bg-green-50 text-green-700 text-xs px-3 py-1 rounded-full font-medium">
                         💰 Best Exchange Rates
                     </span>
-                    <button class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2 text-sm">
+                    <button
+                        class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2 text-sm">
                         <span>Exchange Now</span>
                         <i data-lucide="arrow-right" class="w-3 h-3 sm:w-4 sm:h-4"></i>
                     </button>
@@ -138,42 +148,48 @@
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 sm:w-80 h-full bg-white shadow-2xl z-50 lg:hidden">
-            <div class="flex flex-col h-full">
-                <div class="flex items-center justify-between p-4 sm:p-6 border-b">
+        <div id="mobile-menu"
+            class="mobile-menu fixed top-0 right-0 w-72 sm:w-80 bg-white shadow-2xl z-50 lg:hidden ">
+            <div class="flex flex-col max-h-[80vh]">
+                <div class="flex items-center justify-between p-4 sm:p-6 border-b h-24">
                     <div class="flex items-center space-x-2">
-                        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-500 flex items-center justify-center">
-                            <span class="text-white font-bold text-xs sm:text-sm">G</span>
-                        </div>
-                        <span class="font-bold text-lg sm:text-xl text-gray-900">
-                            glims<span class="text-blue-600">wave</span>
-                        </span>
+                        <img src="../public/glimsBlue.svg" alt="logo" width="130px">
                     </div>
                     <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-100 transition-colors">
                         <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </button>
                 </div>
 
-                <div class="flex-1 p-4 sm:p-6 overflow-y-auto">
+                <div class="flex-1 p-4 sm:p-6 overflow-y-auto min-h-[50vh] overflow-y-auto bg-white">
                     <nav class="space-y-1">
-                        <a href="../index.html" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Home</a>
-                        <a href="../index.html#services" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Services</a>
-                        <a href="../index.html#about" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">About</a>
-                        <a href="../index.html#team" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Team</a>
-                        <a href="../index.html#contact" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Contact</a>
+                        <a href="../index.html"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Home</a>
+                        <a href="../index.html#services"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Services</a>
+                        <a href="../index.html#about"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">About</a>
+                        <a href="../index.html#team"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Team</a>
+                        <a href="../index.html#contact"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Contact</a>
                     </nav>
 
                     <div class="mt-8">
                         <h3 class="font-semibold text-gray-900 mb-3 px-3">Other Services</h3>
                         <div class="space-y-1">
-                            <a href="flight-booking.html" class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Flight Booking</a>
-                            <a href="target-savings.html" class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Target Savings</a>
+                            <a href="flight-booking.html"
+                                class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Flight
+                                Booking</a>
+                            <a href="target-savings.html"
+                                class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Target
+                                Savings</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="p-4 sm:p-6 border-t bg-gray-50">
-                    <button class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2">
+                    <button
+                        class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2">
                         <span>Exchange Now</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
@@ -188,11 +204,13 @@
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                 <!-- Hero Content -->
                 <div class="flex-1 text-center lg:text-left fade-in">
-                    <div class="bg-green-50 text-green-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-4 sm:mb-6 font-medium">
+                    <div
+                        class="bg-green-50 text-green-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-4 sm:mb-6 font-medium">
                         🇳🇬🇬🇭 Lightning-Fast Naira ↔ Cedis Exchange
                     </div>
 
-                    <h1 class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
+                    <h1
+                        class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
                         3 minutes.
                         <span class="block gradient-text mt-1 sm:mt-2">
                             That's all it takes.
@@ -201,15 +219,18 @@
 
                     <p class="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
                         Skip the banks. Skip the hassle. Get your money across borders faster than you can make tea.
-                        Whether you're a Nigerian in Accra sending support home or a Ghanaian entrepreneur paying suppliers in Lagos, Glimswave delivers while others promise.
+                        Whether you're a Nigerian in Accra sending support home or a Ghanaian entrepreneur paying
+                        suppliers in Lagos, Glimswave delivers while others promise.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                        <button class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl">
+                        <button
+                            class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl">
                             <span>📲 Start on WhatsApp Now</span>
                             <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                         </button>
-                        <button class="border-2 border-gray-200 hover:border-green-300 text-gray-700 hover:text-green-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 hover:bg-green-50">
+                        <button
+                            class="border-2 border-gray-200 hover:border-green-300 text-gray-700 hover:text-green-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 hover:bg-green-50">
                             Check Live Rates
                         </button>
                     </div>
@@ -233,7 +254,8 @@
 
                 <!-- Exchange Calculator -->
                 <div class="flex-1 relative fade-in mt-8 lg:mt-0">
-                    <div class="bg-white border border-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-lg mx-auto shadow-2xl">
+                    <div
+                        class="bg-white border border-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-lg mx-auto shadow-2xl">
                         <div class="text-center mb-6">
                             <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Two Ways to Exchange</h3>
                             <p class="text-gray-600 text-sm sm:text-base">Real-time Naira ⇄ Cedis conversion</p>
@@ -250,7 +272,8 @@
                                         </div>
                                         <span class="text-xl sm:text-2xl font-bold text-green-600">₦1,000</span>
                                     </div>
-                                    <div class="text-xs sm:text-sm text-gray-600">Send from Nigeria, receive in Ghana</div>
+                                    <div class="text-xs sm:text-sm text-gray-600">Send from Nigeria, receive in Ghana
+                                    </div>
                                 </div>
 
                                 <div class="flex justify-center">
@@ -262,12 +285,15 @@
                                 <div class="bg-amber-50 border border-amber-200 rounded-lg p-4">
                                     <div class="flex items-center justify-between mb-2">
                                         <div class="flex items-center gap-2">
-                                            <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₵</div>
+                                            <div
+                                                class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                                ₵</div>
                                             <span class="font-medium text-sm sm:text-base">Ghanaian Cedis</span>
                                         </div>
                                         <span class="text-xl sm:text-2xl font-bold text-amber-600">₵142</span>
                                     </div>
-                                    <div class="text-xs sm:text-sm text-gray-600">Family support, business payments</div>
+                                    <div class="text-xs sm:text-sm text-gray-600">Family support, business payments
+                                    </div>
                                 </div>
                             </div>
 
@@ -283,7 +309,8 @@
                                         </div>
                                         <span class="text-xl sm:text-2xl font-bold text-amber-600">₵100</span>
                                     </div>
-                                    <div class="text-xs sm:text-sm text-gray-600">Open to everyone. Nigerian or not.</div>
+                                    <div class="text-xs sm:text-sm text-gray-600">Open to everyone. Nigerian or not.
+                                    </div>
                                 </div>
 
                                 <div class="flex justify-center">
@@ -295,16 +322,20 @@
                                 <div class="bg-green-50 border border-green-200 rounded-lg p-4">
                                     <div class="flex items-center justify-between mb-2">
                                         <div class="flex items-center gap-2">
-                                            <div class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₦</div>
+                                            <div
+                                                class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                                ₦</div>
                                             <span class="font-medium text-sm sm:text-base">Nigerian Naira</span>
                                         </div>
                                         <span class="text-xl sm:text-2xl font-bold text-green-600">₦704</span>
                                     </div>
-                                    <div class="text-xs sm:text-sm text-gray-600">Personal transfers, business payments</div>
+                                    <div class="text-xs sm:text-sm text-gray-600">Personal transfers, business payments
+                                    </div>
                                 </div>
                             </div>
 
-                            <button class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white py-3 sm:py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 mt-6">
+                            <button
+                                class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white py-3 sm:py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 mt-6">
                                 <span>Get These Rates</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </button>
@@ -319,7 +350,9 @@
     <section class="py-12 sm:py-20 bg-white">
         <div class="container mx-auto container-mobile">
             <div class="text-center mb-12 sm:mb-16 fade-in">
-                <div class="bg-blue-100 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">Simple as 1-2-3</div>
+                <div
+                    class="bg-blue-100 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">
+                    Simple as 1-2-3</div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
                     How Cross-Border Transfer Works
                 </h2>
@@ -330,45 +363,57 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Step 1 -->
-                <div class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in relative">
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in relative">
                     <div class="relative mb-4 sm:mb-6">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
+                        <div
+                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
                             <i data-lucide="message-circle" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
                         </div>
-                        <div class="absolute -top-2 -right-2 bg-gray-900 text-white text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center">
+                        <div
+                            class="absolute -top-2 -right-2 bg-gray-900 text-white text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center">
                             01
                         </div>
                     </div>
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Tell us the amount</h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Tell us the amount and destination. Message us on WhatsApp with your transfer details and we'll get started immediately.</p>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Tell us the amount and destination.
+                        Message us on WhatsApp with your transfer details and we'll get started immediately.</p>
                 </div>
 
                 <!-- Step 2 -->
-                <div class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in relative">
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in relative">
                     <div class="relative mb-4 sm:mb-6">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
+                        <div
+                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
                             <i data-lucide="zap" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
                         </div>
-                        <div class="absolute -top-2 -right-2 bg-gray-900 text-white text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center">
+                        <div
+                            class="absolute -top-2 -right-2 bg-gray-900 text-white text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center">
                             02
                         </div>
                     </div>
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">We process instantly</h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">We process instantly and keep you updated. Real-time notifications as your money moves across borders in minutes.</p>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">We process instantly and keep you
+                        updated. Real-time notifications as your money moves across borders in minutes.</p>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in relative">
+                <div
+                    class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in relative">
                     <div class="relative mb-4 sm:mb-6">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
+                        <div
+                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
                             <i data-lucide="smartphone" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
                         </div>
-                        <div class="absolute -top-2 -right-2 bg-gray-900 text-white text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center">
+                        <div
+                            class="absolute -top-2 -right-2 bg-gray-900 text-white text-xs font-bold rounded-full w-8 h-8 flex items-center justify-center">
                             03
                         </div>
                     </div>
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Money delivered</h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Money delivered to any bank or mobile money account across both countries. Fast, reliable, and secure.</p>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">Money delivered to any bank or mobile
+                        money account across both countries. Fast, reliable, and secure.</p>
                 </div>
             </div>
         </div>
@@ -379,7 +424,9 @@
         <div class="container mx-auto container-mobile">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="fade-in">
-                    <div class="bg-green-100 text-green-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">Why Choose Us</div>
+                    <div
+                        class="bg-green-100 text-green-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">
+                        Why Choose Us</div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                         Best Cross-Border Exchange Rates
                     </h2>
@@ -393,40 +440,47 @@
                             <i data-lucide="trending-up" class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Competitive Rates</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Get up to 5% better rates than traditional banks and money changers</p>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Get up to 5% better rates
+                                    than traditional banks and money changers</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3 sm:gap-4">
                             <i data-lucide="clock" class="w-6 h-6 text-blue-500 mt-0.5 flex-shrink-0"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Lightning Fast</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Complete transactions in minutes, not hours or days</p>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Complete transactions in
+                                    minutes, not hours or days</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3 sm:gap-4">
                             <i data-lucide="smartphone" class="w-6 h-6 text-purple-500 mt-0.5 flex-shrink-0"></i>
                             <div>
-                                <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Multiple Payment Options</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Mobile money, bank transfers, and cash pickup in both countries</p>
+                                <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Multiple Payment Options
+                                </h4>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Mobile money, bank
+                                    transfers, and cash pickup in both countries</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3 sm:gap-4">
                             <i data-lucide="shield-check" class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Regulatory Compliant</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Fully licensed and compliant with financial regulations in both countries</p>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Fully licensed and compliant
+                                    with financial regulations in both countries</p>
                             </div>
                         </div>
                     </div>
 
-                    <button class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl">
+                    <button
+                        class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl">
                         <span>Start Exchange Now</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                     </button>
                 </div>
 
                 <div class="relative fade-in">
-                    <div class="bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl p-6 sm:p-8 text-white shadow-2xl">
+                    <div
+                        class="bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl p-6 sm:p-8 text-white shadow-2xl">
                         <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Today's Exchange Rates</h3>
                         <div class="space-y-4">
                             <div class="bg-white/20 rounded-lg p-4">
@@ -478,55 +532,82 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <!-- Nigeria Payment Methods -->
                 <div class="fade-in">
-                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center space-x-2">
+                    <h3
+                        class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center space-x-2">
                         <span>🇳🇬</span>
                         <span>Nigeria Payment Options</span>
                     </h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₦</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₦</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">GTBank</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₦</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₦</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">Zenith Bank</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₦</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₦</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">Access Bank</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₦</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₦</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">UBA</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₦</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₦</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">First Bank</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
                                 <i data-lucide="smartphone" class="w-6 h-6 text-purple-600"></i>
                             </div>
                             <div class="text-sm font-medium text-gray-900">Opay</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
                                 <i data-lucide="smartphone" class="w-6 h-6 text-purple-600"></i>
                             </div>
                             <div class="text-sm font-medium text-gray-900">PalmPay</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
                                 <i data-lucide="smartphone" class="w-6 h-6 text-purple-600"></i>
                             </div>
                             <div class="text-sm font-medium text-gray-900">Kuda Bank</div>
@@ -536,56 +617,81 @@
 
                 <!-- Ghana Payment Methods -->
                 <div class="fade-in">
-                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center space-x-2">
+                    <h3
+                        class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center space-x-2">
                         <span>🇬🇭</span>
                         <span>Ghana Payment Options</span>
                     </h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
                             <div class="w-12 h-12 bg-blue-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
                                 <i data-lucide="smartphone" class="w-6 h-6 text-blue-600"></i>
                             </div>
                             <div class="text-sm font-medium text-gray-900">MTN Mobile Money</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
                             <div class="w-12 h-12 bg-red-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
                                 <i data-lucide="smartphone" class="w-6 h-6 text-red-600"></i>
                             </div>
                             <div class="text-sm font-medium text-gray-900">Vodafone Cash</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-orange-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-orange-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
                                 <i data-lucide="smartphone" class="w-6 h-6 text-orange-600"></i>
                             </div>
                             <div class="text-sm font-medium text-gray-900">AirtelTigo Money</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₵</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₵</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">GCB Bank</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₵</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₵</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">Absa Bank</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₵</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₵</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">Ecobank</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₵</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₵</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">Fidelity Bank</div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
-                            <div class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
-                                <div class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">₵</div>
+                        <div
+                            class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-amber-100 rounded-lg mx-auto mb-2 flex items-center justify-center">
+                                <div
+                                    class="w-6 h-6 bg-amber-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                                    ₵</div>
                             </div>
                             <div class="text-sm font-medium text-gray-900">CAL Bank</div>
                         </div>
@@ -606,11 +712,13 @@
                 Your money moves as fast as your ambitions.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white text-green-600 hover:bg-gray-100 hover:text-green-700 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 mx-auto sm:mx-0 shadow-lg hover:shadow-xl">
+                <button
+                    class="bg-white text-green-600 hover:bg-gray-100 hover:text-green-700 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 mx-auto sm:mx-0 shadow-lg hover:shadow-xl">
                     <span>📲 Start on WhatsApp Now</span>
                     <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </button>
-                <button class="border-2 border-white text-white hover:bg-white hover:text-green-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 mx-auto sm:mx-0">
+                <button
+                    class="border-2 border-white text-white hover:bg-white hover:text-green-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 mx-auto sm:mx-0">
                     Check Live Rates
                 </button>
             </div>
@@ -648,8 +756,10 @@
                 <div>
                     <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-6">Other Services</h3>
                     <div class="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
-                        <div><a href="flight-booking.html" class="hover:text-white transition-colors">Flight Booking</a></div>
-                        <div><a href="target-savings.html" class="hover:text-white transition-colors">Target Savings</a></div>
+                        <div><a href="flight-booking.html" class="hover:text-white transition-colors">Flight Booking</a>
+                        </div>
+                        <div><a href="target-savings.html" class="hover:text-white transition-colors">Target Savings</a>
+                        </div>
                         <div><a href="../index.html" class="hover:text-white transition-colors">All Services</a></div>
                     </div>
                 </div>
@@ -659,13 +769,15 @@
                     <div class="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
                         <div><a href="../index.html#about" class="hover:text-white transition-colors">About Us</a></div>
                         <div><a href="../index.html#team" class="hover:text-white transition-colors">Our Team</a></div>
-                        <div><a href="../index.html#contact" class="hover:text-white transition-colors">Contact</a></div>
+                        <div><a href="../index.html#contact" class="hover:text-white transition-colors">Contact</a>
+                        </div>
                         <div><a href="../faq.html" class="hover:text-white transition-colors">FAQ</a></div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm">
+            <div
+                class="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm">
                 <p>&copy; 2025 Glimswave. All rights reserved.</p>
                 <div class="flex space-x-4 mt-4 sm:mt-0">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -729,7 +841,7 @@
         });
 
         // Close mobile menu on escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
                 closeMobileMenu();
             }
@@ -737,7 +849,7 @@
 
         // Add loading animation to buttons
         document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 this.style.transform = 'scale(0.95)';
                 setTimeout(() => {
                     this.style.transform = 'scale(1)';
@@ -746,4 +858,5 @@
         });
     </script>
 </body>
+
 </html>

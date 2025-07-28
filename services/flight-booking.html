@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Booking - Best Deals Worldwide | Glimswave</title>
-    <meta name="description" content="Book flights to any destination worldwide with competitive prices and flexible booking options. Fast, secure flight booking service.">
+    <meta name="description"
+        content="Book flights to any destination worldwide with competitive prices and flexible booking options. Fast, secure flight booking service.">
     <link rel="shortcut icon" href="../public/icon.svg" type="image/x-icon">
 
     <!-- Tailwind CSS -->
@@ -44,7 +46,8 @@
     </script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <style>
         .gradient-text {
@@ -107,6 +110,7 @@
         }
     </style>
 </head>
+
 <body class="font-sans antialiased bg-white">
     <!-- Navigation -->
     <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100/50 shadow-sm">
@@ -119,11 +123,16 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="../index.html" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Home</a>
-                    <a href="../index.html#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Services</a>
-                    <a href="../index.html#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">About</a>
-                    <a href="../index.html#team" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Team</a>
-                    <a href="../index.html#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Contact</a>
+                    <a href="../index.html"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Home</a>
+                    <a href="../index.html#services"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Services</a>
+                    <a href="../index.html#about"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">About</a>
+                    <a href="../index.html#team"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Team</a>
+                    <a href="../index.html#contact"
+                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Contact</a>
                 </div>
 
                 <!-- CTA Button -->
@@ -131,7 +140,8 @@
                     <span class="hidden md:block bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">
                         ✈️ Best Flight Deals
                     </span>
-                    <button class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2 text-sm">
+                    <button
+                        class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2 text-sm">
                         <span>Book Flight</span>
                         <i data-lucide="arrow-right" class="w-3 h-3 sm:w-4 sm:h-4"></i>
                     </button>
@@ -145,42 +155,47 @@
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 sm:w-80 h-full bg-white shadow-2xl z-50 lg:hidden">
-            <div class="flex flex-col h-full">
-                <div class="flex items-center justify-between p-4 sm:p-6 border-b">
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 sm:w-80 bg-white shadow-2xl z-50 lg:hidden ">
+            <div class="flex flex-col max-h-[80vh]">
+                <div class="flex items-center justify-between p-4 sm:p-6 border-b h-24">
                     <div class="flex items-center space-x-2">
-                        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-500 flex items-center justify-center">
-                            <span class="text-white font-bold text-xs sm:text-sm">G</span>
-                        </div>
-                        <span class="font-bold text-lg sm:text-xl text-gray-900">
-                            glims<span class="text-blue-600">wave</span>
-                        </span>
+                        <img src="../public/glimsBlue.svg" alt="logo" width="130px">
                     </div>
                     <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-100 transition-colors">
                         <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                     </button>
                 </div>
 
-                <div class="flex-1 p-4 sm:p-6 overflow-y-auto">
+                <div class="flex-1 p-4 sm:p-6 overflow-y-auto min-h-[50vh] overflow-y-auto bg-white">
                     <nav class="space-y-1">
-                        <a href="../index.html" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Home</a>
-                        <a href="../index.html#services" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Services</a>
-                        <a href="../index.html#about" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">About</a>
-                        <a href="../index.html#team" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Team</a>
-                        <a href="../index.html#contact" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Contact</a>
+                        <a href="../index.html"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Home</a>
+                        <a href="../index.html#services"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Services</a>
+                        <a href="../index.html#about"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">About</a>
+                        <a href="../index.html#team"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Team</a>
+                        <a href="../index.html#contact"
+                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Contact</a>
                     </nav>
 
                     <div class="mt-8">
                         <h3 class="font-semibold text-gray-900 mb-3 px-3">Other Services</h3>
                         <div class="space-y-1">
-                            <a href="currency-exchange.html" class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Currency Exchange</a>
-                            <a href="target-savings.html" class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Target Savings</a>
+                            <a href="currency-exchange.html"
+                                class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Currency
+                                Exchange</a>
+                            <a href="target-savings.html"
+                                class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Target
+                                Savings</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="p-4 sm:p-6 border-t bg-gray-50">
-                    <button class="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2">
+                    <button
+                        class="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2">
                         <span>Book Flight</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
@@ -195,11 +210,13 @@
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                 <!-- Hero Content -->
                 <div class="flex-1 text-center lg:text-left fade-in">
-                    <div class="bg-blue-50 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-4 sm:mb-6 font-medium">
+                    <div
+                        class="bg-blue-50 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-4 sm:mb-6 font-medium">
                         ✈️ Africa's Trusted Flight Booking Service
                     </div>
 
-                    <h1 class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
+                    <h1
+                        class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
                         Skip the stress.
                         <span class="block gradient-text mt-1 sm:mt-2">
                             Save money. Fly anywhere.
@@ -212,11 +229,13 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                        <button class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl">
+                        <button
+                            class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl">
                             <span>📲 WhatsApp us now</span>
                             <i data-lucide="message-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                         </button>
-                        <button class="border-2 border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 hover:bg-blue-50">
+                        <button
+                            class="border-2 border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 hover:bg-blue-50">
                             Price Match Promise
                         </button>
                     </div>
@@ -240,7 +259,8 @@
 
                 <!-- Flight Search Widget -->
                 <div class="flex-1 relative fade-in mt-8 lg:mt-0">
-                    <div class="bg-white border border-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-lg mx-auto shadow-2xl">
+                    <div
+                        class="bg-white border border-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-lg mx-auto shadow-2xl">
                         <div class="text-center mb-6">
                             <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Search Flights</h3>
                             <p class="text-gray-600 text-sm sm:text-base">Find the best deals to your destination</p>
@@ -252,8 +272,10 @@
                                 <div class="relative">
                                     <label class="block text-sm font-medium text-gray-700 mb-2">From</label>
                                     <div class="relative">
-                                        <i data-lucide="map-pin" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-                                        <input type="text" placeholder="Lagos (LOS)" class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <i data-lucide="map-pin"
+                                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                                        <input type="text" placeholder="Lagos (LOS)"
+                                            class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                     </div>
                                 </div>
 
@@ -266,8 +288,10 @@
                                 <div class="relative">
                                     <label class="block text-sm font-medium text-gray-700 mb-2">To</label>
                                     <div class="relative">
-                                        <i data-lucide="map-pin" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-                                        <input type="text" placeholder="New York (JFK)" class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <i data-lucide="map-pin"
+                                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                                        <input type="text" placeholder="New York (JFK)"
+                                            class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                     </div>
                                 </div>
                             </div>
@@ -277,16 +301,20 @@
                                 <div class="relative">
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Departure</label>
                                     <div class="relative">
-                                        <i data-lucide="calendar" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-                                        <input type="date" class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <i data-lucide="calendar"
+                                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                                        <input type="date"
+                                            class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                     </div>
                                 </div>
 
                                 <div class="relative">
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Return</label>
                                     <div class="relative">
-                                        <i data-lucide="calendar" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-                                        <input type="date" class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <i data-lucide="calendar"
+                                            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                                        <input type="date"
+                                            class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                     </div>
                                 </div>
                             </div>
@@ -295,8 +323,10 @@
                             <div class="relative">
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Passengers</label>
                                 <div class="relative">
-                                    <i data-lucide="users" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-                                    <select class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <i data-lucide="users"
+                                        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                                    <select
+                                        class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                         <option>1 Adult</option>
                                         <option>2 Adults</option>
                                         <option>3 Adults</option>
@@ -305,7 +335,8 @@
                                 </div>
                             </div>
 
-                            <button class="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 mt-6">
+                            <button
+                                class="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 mt-6">
                                 <span>Search Flights</span>
                                 <i data-lucide="search" class="w-4 h-4"></i>
                             </button>
@@ -325,7 +356,9 @@
     <section class="py-12 sm:py-20 bg-white">
         <div class="container mx-auto container-mobile">
             <div class="text-center mb-12 sm:mb-16 fade-in">
-                <div class="bg-blue-100 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">Popular Destinations</div>
+                <div
+                    class="bg-blue-100 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">
+                    Popular Destinations</div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
                     Top Flight Destinations
                 </h2>
@@ -343,12 +376,14 @@
                             <h3 class="text-lg sm:text-xl font-bold">London</h3>
                             <p class="text-sm opacity-90">United Kingdom</p>
                         </div>
-                        <div class="absolute top-4 right-4 bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
+                        <div
+                            class="absolute top-4 right-4 bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
                             From $450
                         </div>
                     </div>
                     <div class="p-4 sm:p-6">
-                        <p class="text-gray-600 text-sm leading-relaxed">Explore historic landmarks, world-class museums, and vibrant culture in England's capital.</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">Explore historic landmarks, world-class
+                            museums, and vibrant culture in England's capital.</p>
                     </div>
                 </div>
 
@@ -359,12 +394,14 @@
                             <h3 class="text-lg sm:text-xl font-bold">Dubai</h3>
                             <p class="text-sm opacity-90">United Arab Emirates</p>
                         </div>
-                        <div class="absolute top-4 right-4 bg-white text-green-600 px-3 py-1 rounded-full text-sm font-medium">
+                        <div
+                            class="absolute top-4 right-4 bg-white text-green-600 px-3 py-1 rounded-full text-sm font-medium">
                             From $380
                         </div>
                     </div>
                     <div class="p-4 sm:p-6">
-                        <p class="text-gray-600 text-sm leading-relaxed">Experience luxury shopping, stunning architecture, and world-class hospitality.</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">Experience luxury shopping, stunning
+                            architecture, and world-class hospitality.</p>
                     </div>
                 </div>
 
@@ -375,12 +412,14 @@
                             <h3 class="text-lg sm:text-xl font-bold">Paris</h3>
                             <p class="text-sm opacity-90">France</p>
                         </div>
-                        <div class="absolute top-4 right-4 bg-white text-purple-600 px-3 py-1 rounded-full text-sm font-medium">
+                        <div
+                            class="absolute top-4 right-4 bg-white text-purple-600 px-3 py-1 rounded-full text-sm font-medium">
                             From $520
                         </div>
                     </div>
                     <div class="p-4 sm:p-6">
-                        <p class="text-gray-600 text-sm leading-relaxed">Discover romance, art, fashion, and culinary excellence in the City of Light.</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">Discover romance, art, fashion, and culinary
+                            excellence in the City of Light.</p>
                     </div>
                 </div>
 
@@ -391,12 +430,14 @@
                             <h3 class="text-lg sm:text-xl font-bold">New York</h3>
                             <p class="text-sm opacity-90">United States</p>
                         </div>
-                        <div class="absolute top-4 right-4 bg-white text-orange-600 px-3 py-1 rounded-full text-sm font-medium">
+                        <div
+                            class="absolute top-4 right-4 bg-white text-orange-600 px-3 py-1 rounded-full text-sm font-medium">
                             From $680
                         </div>
                     </div>
                     <div class="p-4 sm:p-6">
-                        <p class="text-gray-600 text-sm leading-relaxed">Experience the energy of the Big Apple with Broadway shows, iconic landmarks, and more.</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">Experience the energy of the Big Apple with
+                            Broadway shows, iconic landmarks, and more.</p>
                     </div>
                 </div>
             </div>
@@ -408,7 +449,9 @@
         <div class="container mx-auto container-mobile">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="fade-in">
-                    <div class="bg-blue-100 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">Why Book With Us</div>
+                    <div
+                        class="bg-blue-100 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">
+                        Why Book With Us</div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                         Your trusted flight booking partner
                     </h2>
@@ -422,40 +465,46 @@
                             <i data-lucide="search" class="w-6 h-6 text-blue-500 mt-0.5 flex-shrink-0"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Compare & Save</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Search and compare flights from 500+ airlines to find the best prices</p>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Search and compare flights
+                                    from 500+ airlines to find the best prices</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3 sm:gap-4">
                             <i data-lucide="shield-check" class="w-6 h-6 text-green-500 mt-0.5 flex-shrink-0"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Secure Booking</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Your payment information is protected with bank-level security</p>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Your payment information is
+                                    protected with bank-level security</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3 sm:gap-4">
                             <i data-lucide="clock" class="w-6 h-6 text-purple-500 mt-0.5 flex-shrink-0"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-900 text-sm sm:text-base">Instant Confirmation</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Get your e-tickets immediately after booking confirmation</p>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Get your e-tickets
+                                    immediately after booking confirmation</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3 sm:gap-4">
                             <i data-lucide="headphones" class="w-6 h-6 text-orange-500 mt-0.5 flex-shrink-0"></i>
                             <div>
                                 <h4 class="font-semibold text-gray-900 text-sm sm:text-base">24/7 Customer Support</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Our travel experts are available around the clock to assist you</p>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Our travel experts are
+                                    available around the clock to assist you</p>
                             </div>
                         </div>
                     </div>
 
-                    <button class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl">
+                    <button
+                        class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl">
                         <span>Start Booking</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                     </button>
                 </div>
 
                 <div class="relative fade-in">
-                    <div class="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-6 sm:p-8 text-white shadow-2xl">
+                    <div
+                        class="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-6 sm:p-8 text-white shadow-2xl">
                         <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Flight Booking Benefits</h3>
                         <div class="space-y-4">
                             <div class="bg-white/20 rounded-lg p-4">
@@ -463,7 +512,8 @@
                                     <i data-lucide="percent" class="w-5 h-5"></i>
                                     <div>
                                         <div class="font-semibold text-sm sm:text-base">Best Price Guarantee</div>
-                                        <div class="text-blue-100 text-xs sm:text-sm">We'll match any lower price you find</div>
+                                        <div class="text-blue-100 text-xs sm:text-sm">We'll match any lower price you
+                                            find</div>
                                     </div>
                                 </div>
                             </div>
@@ -472,7 +522,8 @@
                                     <i data-lucide="calendar" class="w-5 h-5"></i>
                                     <div>
                                         <div class="font-semibold text-sm sm:text-base">Flexible Booking</div>
-                                        <div class="text-blue-100 text-xs sm:text-sm">Free changes and cancellations available</div>
+                                        <div class="text-blue-100 text-xs sm:text-sm">Free changes and cancellations
+                                            available</div>
                                     </div>
                                 </div>
                             </div>
@@ -481,7 +532,8 @@
                                     <i data-lucide="globe" class="w-5 h-5"></i>
                                     <div>
                                         <div class="font-semibold text-sm sm:text-base">Global Coverage</div>
-                                        <div class="text-blue-100 text-xs sm:text-sm">Flights to 4,000+ destinations worldwide</div>
+                                        <div class="text-blue-100 text-xs sm:text-sm">Flights to 4,000+ destinations
+                                            worldwide</div>
                                     </div>
                                 </div>
                             </div>
@@ -502,11 +554,13 @@
                 Book your next flight with confidence and discover amazing destinations at unbeatable prices
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 mx-auto sm:mx-0 shadow-lg hover:shadow-xl">
+                <button
+                    class="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 mx-auto sm:mx-0 shadow-lg hover:shadow-xl">
                     <span>Search Flights Now</span>
                     <i data-lucide="search" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </button>
-                <button class="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 mx-auto sm:mx-0">
+                <button
+                    class="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 mx-auto sm:mx-0">
                     View Deals
                 </button>
             </div>
@@ -544,8 +598,10 @@
                 <div>
                     <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-6">Other Services</h3>
                     <div class="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
-                        <div><a href="currency-exchange.html" class="hover:text-white transition-colors">Currency Exchange</a></div>
-                        <div><a href="target-savings.html" class="hover:text-white transition-colors">Target Savings</a></div>
+                        <div><a href="currency-exchange.html" class="hover:text-white transition-colors">Currency
+                                Exchange</a></div>
+                        <div><a href="target-savings.html" class="hover:text-white transition-colors">Target Savings</a>
+                        </div>
                         <div><a href="../index.html" class="hover:text-white transition-colors">All Services</a></div>
                     </div>
                 </div>
@@ -555,13 +611,15 @@
                     <div class="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
                         <div><a href="../index.html#about" class="hover:text-white transition-colors">About Us</a></div>
                         <div><a href="../index.html#team" class="hover:text-white transition-colors">Our Team</a></div>
-                        <div><a href="../index.html#contact" class="hover:text-white transition-colors">Contact</a></div>
+                        <div><a href="../index.html#contact" class="hover:text-white transition-colors">Contact</a>
+                        </div>
                         <div><a href="../faq.html" class="hover:text-white transition-colors">FAQ</a></div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm">
+            <div
+                class="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm">
                 <p>&copy; 2025 Glimswave. All rights reserved.</p>
                 <div class="flex space-x-4 mt-4 sm:mt-0">
                     <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -625,7 +683,7 @@
         });
 
         // Close mobile menu on escape key
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
                 closeMobileMenu();
             }
@@ -633,7 +691,7 @@
 
         // Add loading animation to buttons
         document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 this.style.transform = 'scale(0.95)';
                 setTimeout(() => {
                     this.style.transform = 'scale(1)';
@@ -642,4 +700,5 @@
         });
     </script>
 </body>
+
 </html>
