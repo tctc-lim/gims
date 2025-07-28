@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glimswave - Your Trusted Partner for Financial Services in Africa</title>
+    <meta name="description" content="Currency exchange, flight booking, and target savings services across Africa. Fast, secure, and reliable financial solutions.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradientMove 3s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Mobile-first responsive utilities */
+        .container-mobile {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container-mobile {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container-mobile {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-white">
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100/50 shadow-sm">
+        <nav class="container mx-auto container-mobile">
+            <div class="flex items-center justify-between h-14 sm:h-16">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-2 z-10">
+                    <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-500 flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-xs sm:text-sm">G</span>
+                    </div>
+                    <span class="font-bold text-lg sm:text-xl text-gray-900">
+                        glims<span class="text-blue-600">wave</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Services</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">About</a>
+                    <a href="#team" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Team</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <span class="hidden md:block bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">
+                        ✨ Trusted Across Africa
+                    </span>
+                    <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2 text-sm">
+                        <span>Get Started</span>
+                        <i data-lucide="arrow-right" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                    <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-72 sm:w-80 h-full bg-white shadow-2xl z-50 lg:hidden">
+            <div class="flex flex-col h-full">
+                <div class="flex items-center justify-between p-4 sm:p-6 border-b">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-500 flex items-center justify-center">
+                            <span class="text-white font-bold text-xs sm:text-sm">G</span>
+                        </div>
+                        <span class="font-bold text-lg sm:text-xl text-gray-900">
+                            glims<span class="text-blue-600">wave</span>
+                        </span>
+                    </div>
+                    <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                        <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </button>
+                </div>
+
+                <div class="flex-1 p-4 sm:p-6 overflow-y-auto">
+                    <nav class="space-y-1">
+                        <a href="#home" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Home</a>
+                        <a href="#services" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Services</a>
+                        <a href="#about" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">About</a>
+                        <a href="#team" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Team</a>
+                        <a href="#contact" class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Contact</a>
+                    </nav>
+
+                    <div class="mt-8">
+                        <h3 class="font-semibold text-gray-900 mb-3 px-3">Our Services</h3>
+                        <div class="space-y-1">
+                            <a href="services/currency-exchange.html" class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Currency Exchange</a>
+                            <a href="services/flight-booking.html" class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Flight Booking</a>
+                            <a href="services/target-savings.html" class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Target Savings</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 sm:p-6 border-t bg-gray-50">
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2">
+                        <span>Get Started</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-16 sm:pt-20 pb-12 sm:pb-20 hero-gradient min-h-screen flex items-center">
+        <div class="container mx-auto container-mobile">
+            <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                <!-- Hero Content -->
+                <div class="flex-1 text-center lg:text-left fade-in">
+                    <div class="bg-blue-50 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-4 sm:mb-6 font-medium">
+                        🌍 Serving Africa with Excellence
+                    </div>
+
+                    <h1 class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
+                        Your trusted partner for
+                        <span class="block gradient-text mt-1 sm:mt-2">
+                            financial freedom
+                        </span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
+                        Experience seamless currency exchange, convenient flight booking, and smart target savings
+                        solutions designed for modern Africa.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl">
+                            <span>Start Your Journey</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                        </button>
+                        <button class="border-2 border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 hover:bg-blue-50">
+                            Learn More
+                        </button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 sm:w-5 sm:h-5 text-green-500"></i>
+                            <span>Bank-Level Security</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="zap" class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500"></i>
+                            <span>Instant Processing</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="headphones" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="flex-1 relative fade-in mt-8 lg:mt-0">
+                    <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
+                        <!-- Main Device Mockup -->
+                        <div class="relative z-10 bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-2xl animate-float">
+                            <div class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 h-72 sm:h-80 lg:h-96">
+                                <div class="text-center">
+                                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg">
+                                        <i data-lucide="trending-up" class="w-6 h-6 sm:w-8 sm:h-8 text-white"></i>
+                                    </div>
+                                    <h3 class="font-bold text-sm sm:text-lg mb-1 sm:mb-2">Smart Financial Hub</h3>
+                                    <p class="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6">All services in one place</p>
+
+                                    <div class="space-y-2 sm:space-y-3">
+                                        <div class="bg-green-50 border border-green-200 rounded-lg p-2 sm:p-3 text-left">
+                                            <div class="flex justify-between items-center">
+                                                <span class="text-xs sm:text-sm font-medium">NGN → GHS</span>
+                                                <span class="text-green-600 font-bold text-xs sm:text-sm">₦1,000 → ₵142</span>
+                                            </div>
+                                        </div>
+                                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-2 sm:p-3 text-left">
+                                            <div class="flex justify-between items-center">
+                                                <span class="text-xs sm:text-sm font-medium">Lagos → Accra</span>
+                                                <span class="text-blue-600 font-bold text-xs sm:text-sm">$280</span>
+                                            </div>
+                                        </div>
+                                        <div class="bg-purple-50 border border-purple-200 rounded-lg p-2 sm:p-3 text-left">
+                                            <div class="flex justify-between items-center">
+                                                <span class="text-xs sm:text-sm font-medium">Target Goal</span>
+                                                <span class="text-purple-600 font-bold text-xs sm:text-sm">85% Complete</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium shadow-lg animate-pulse">
+                            ✓ Verified
+                        </div>
+                        <div class="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-blue-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium shadow-lg animate-pulse">
+                            🚀 Fast
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-12 sm:py-20 bg-white">
+        <div class="container mx-auto container-mobile">
+            <div class="text-center mb-12 sm:mb-16 fade-in">
+                <div class="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">Our Services</div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+                    Comprehensive Financial Solutions
+                </h2>
+                <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Everything you need to manage your finances and travel plans in one trusted platform
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Currency Exchange -->
+                <div class="service-card bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in group">
+                    <div class="service-icon w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 mx-auto flex items-center justify-center mb-4 sm:mb-6 shadow-lg">
+                        <i data-lucide="arrow-left-right" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Currency Exchange</h3>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">Exchange between Nigerian Naira and Ghanaian Cedis with competitive rates and instant processing.</p>
+                    <a href="services/currency-exchange.html" class="inline-flex items-center space-x-2 text-green-600 hover:text-green-700 font-medium transition-colors group-hover:translate-x-1 transform duration-300">
+                        <span>Learn More</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Flight Booking -->
+                <div class="service-card bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in group">
+                    <div class="service-icon w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 mx-auto flex items-center justify-center mb-4 sm:mb-6 shadow-lg">
+                        <i data-lucide="plane" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Flight Booking</h3>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">Book flights to any destination worldwide with competitive prices and flexible booking options.</p>
+                    <a href="services/flight-booking.html" class="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition-colors group-hover:translate-x-1 transform duration-300">
+                        <span>Learn More</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Target Savings -->
+                <div class="service-card bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in group md:col-span-2 lg:col-span-1">
+                    <div class="service-icon w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 mx-auto flex items-center justify-center mb-4 sm:mb-6 shadow-lg">
+                        <i data-lucide="piggy-bank" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">Target Savings</h3>
+                    <p class="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed">Achieve your financial goals with our smart savings plans and automated goal tracking system.</p>
+                    <a href="services/target-savings.html" class="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-medium transition-colors group-hover:translate-x-1 transform duration-300">
+                        <span>Learn More</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 sm:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto container-mobile">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="fade-in">
+                    <div class="bg-blue-100 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">About Glimswave</div>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+                        Pioneering financial services across Africa
+                    </h2>
+                    <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+                        Glimswave has transformed how Africans manage their finances and travel needs.
+                        We provide seamless currency exchange between Nigeria and Ghana, convenient flight booking
+                        to destinations worldwide, and smart savings solutions that help you achieve your financial goals.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                        <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                            <div class="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">25K+</div>
+                            <div class="text-xs sm:text-sm text-gray-600">Happy Customers</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                            <div class="text-2xl sm:text-3xl font-bold text-green-600 mb-1 sm:mb-2">₦500M+</div>
+                            <div class="text-xs sm:text-sm text-gray-600">Volume Processed</div>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                            <div class="text-2xl sm:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">99.9%</div>
+                            <div class="text-xs sm:text-sm text-gray-600">Uptime</div>
+                        </div>
+                    </div>
+
+                    <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl">
+                        <span>Start Your Journey</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                    </button>
+                </div>
+
+                <div class="relative fade-in">
+                    <div class="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-6 sm:p-8 text-white shadow-2xl">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Why Choose Glimswave?</h3>
+                        <div class="space-y-4 sm:space-y-6">
+                            <div class="flex items-start space-x-3 sm:space-x-4">
+                                <div class="bg-white/20 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                                    <i data-lucide="zap" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1 text-sm sm:text-base">Lightning Fast</h4>
+                                    <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Process transactions and bookings in minutes, not hours</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 sm:space-x-4">
+                                <div class="bg-white/20 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                                    <i data-lucide="shield-check" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1 text-sm sm:text-base">Bank-Level Security</h4>
+                                    <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Your financial information is protected with enterprise-grade security</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3 sm:space-x-4">
+                                <div class="bg-white/20 rounded-lg p-2 sm:p-3 flex-shrink-0">
+                                    <i data-lucide="headphones" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1 text-sm sm:text-base">24/7 Support</h4>
+                                    <p class="text-blue-100 text-xs sm:text-sm leading-relaxed">Expert customer support available round the clock</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-12 sm:py-20 bg-white">
+        <div class="container mx-auto container-mobile">
+            <div class="text-center mb-12 sm:mb-16 fade-in">
+                <div class="bg-green-100 text-green-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">Our Team</div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+                    Meet the Leadership Team
+                </h2>
+                <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Experienced professionals driving innovation in African financial services
+                </p>
+            </div>
+
+            <!-- Founder Section -->
+            <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 fade-in">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+                    <div class="text-center lg:text-left">
+                        <div class="bg-amber-100 text-amber-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">Founder & CEO</div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">Gideon Okonye</h3>
+                        <p class="text-base sm:text-lg lg:text-xl text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+                            With over 8 years of experience in financial services and technology across Africa,
+                            Gideon has built a strong and innovative team focused on transforming financial
+                            accessibility for all Africans.
+                        </p>
+                        <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Fintech Pioneer</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs sm:text-sm font-medium">8+ Years Experience</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs sm:text-sm font-medium">Africa Expert</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-40 h-40 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full mx-auto flex items-center justify-center text-white text-4xl sm:text-5xl lg:text-6xl font-bold shadow-2xl">
+                            GO
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Team -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="bg-white border border-gray-100 rounded-2xl p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-white text-lg sm:text-xl font-bold shadow-lg">
+                        ME
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg text-gray-900 mb-1 sm:mb-2">Macdonald Enwereuzo</h4>
+                    <p class="text-gray-600 text-xs sm:text-sm">Head of Operations, Nigeria</p>
+                </div>
+
+                <div class="bg-white border border-gray-100 rounded-2xl p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-white text-lg sm:text-xl font-bold shadow-lg">
+                        RA
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg text-gray-900 mb-1 sm:mb-2">Riridollarzz Aning Rejoice Akosua</h4>
+                    <p class="text-gray-600 text-xs sm:text-sm">Chief Marketing Officer</p>
+                </div>
+
+                <div class="bg-white border border-gray-100 rounded-2xl p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-white text-lg sm:text-xl font-bold shadow-lg">
+                        TF
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg text-gray-900 mb-1 sm:mb-2">Torvinya Freda</h4>
+                    <p class="text-gray-600 text-xs sm:text-sm">Head of Operations, Ghana</p>
+                </div>
+
+                <div class="bg-white border border-gray-100 rounded-2xl p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center text-white text-lg sm:text-xl font-bold shadow-lg">
+                        KE
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg text-gray-900 mb-1 sm:mb-2">Kachi Eze</h4>
+                    <p class="text-gray-600 text-xs sm:text-sm">Brand Manager and IT Consultant</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 sm:py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="container mx-auto container-mobile">
+            <div class="text-center mb-12 sm:mb-16 fade-in">
+                <div class="bg-yellow-100 text-yellow-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">Testimonials</div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+                    What Our Customers Say
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-3 sm:mb-4">
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <i data-lucide="quote" class="w-6 h-6 sm:w-8 sm:h-8 text-gray-300 mb-3 sm:mb-4"></i>
+                    <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">The currency exchange service is fantastic! I can send money to my family in Ghana within minutes with great rates.</p>
+                    <div class="font-semibold text-gray-900 text-sm sm:text-base">Kwame A.</div>
+                    <div class="text-xs sm:text-sm text-gray-500">Business Owner, Lagos</div>
+                </div>
+
+                <div class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-3 sm:mb-4">
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <i data-lucide="quote" class="w-6 h-6 sm:w-8 sm:h-8 text-gray-300 mb-3 sm:mb-4"></i>
+                    <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">Flight booking was seamless and I got the best prices. The target savings feature is helping me reach my goals faster.</p>
+                    <div class="font-semibold text-gray-900 text-sm sm:text-base">Adaora N.</div>
+                    <div class="text-xs sm:text-sm text-gray-500">Marketing Executive, Abuja</div>
+                </div>
+
+                <div class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 fade-in md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-3 sm:mb-4">
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <i data-lucide="quote" class="w-6 h-6 sm:w-8 sm:h-8 text-gray-300 mb-3 sm:mb-4"></i>
+                    <p class="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">Outstanding customer service and reliable platform. Glimswave has made managing my finances so much easier.</p>
+                    <div class="font-semibold text-gray-900 text-sm sm:text-base">Emmanuel K.</div>
+                    <div class="text-xs sm:text-sm text-gray-500">Software Developer, Accra</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 sm:py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white">
+        <div class="container mx-auto container-mobile text-center">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+                Ready to transform your financial journey?
+            </h2>
+            <p class="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+                Join thousands of satisfied customers who trust Glimswave for their financial and travel needs
+            </p>
+            <button class="bg-white text-blue-600 hover:bg-gray-100 hover:text-blue-700 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 mx-auto shadow-lg hover:shadow-xl">
+                <span>Start Your Journey Now</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-12 sm:py-16">
+        <div class="container mx-auto container-mobile">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="sm:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4 sm:mb-6">
+                        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-blue-600 via-purple-600 to-cyan-500 flex items-center justify-center shadow-lg">
+                            <span class="text-white font-bold text-xs sm:text-sm">G</span>
+                        </div>
+                        <span class="font-bold text-lg sm:text-xl">
+                            glims<span class="text-blue-400">wave</span>
+                        </span>
+                    </div>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed">
+                        Your trusted partner for financial services across Africa.
+                        Currency exchange, flight booking, and savings solutions made simple.
+                    </p>
+                    <div class="space-y-2 text-xs sm:text-sm text-gray-400">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span>Madina, Accra, Ghana</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>+233 (0) 593502976</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>hello@glimswave.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-6">Services</h3>
+                    <div class="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
+                        <div><a href="services/currency-exchange.html" class="hover:text-white transition-colors">Currency Exchange</a></div>
+                        <div><a href="services/flight-booking.html" class="hover:text-white transition-colors">Flight Booking</a></div>
+                        <div><a href="services/target-savings.html" class="hover:text-white transition-colors">Target Savings</a></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-6">Company</h3>
+                    <div class="space-y-2 sm:space-y-3 text-gray-400 text-sm sm:text-base">
+                        <div><a href="#about" class="hover:text-white transition-colors">About Us</a></div>
+                        <div><a href="#team" class="hover:text-white transition-colors">Our Team</a></div>
+                        <div><a href="#contact" class="hover:text-white transition-colors">Contact</a></div>
+                        <div><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm">
+                <p>&copy; 2025 Glimswave. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when clicking on links
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Add loading animation to buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
