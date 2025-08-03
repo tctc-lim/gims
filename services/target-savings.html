@@ -55,6 +55,13 @@
             background: linear-gradient(135deg, #faf5ff 0%, #ffffff 50%, #f3e8ff 100%);
         }
 
+        .bg-targetsaving {
+            background: url("../public/bg-targetsavings.jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
         .card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -104,55 +111,135 @@
         }
 
         .progress-bar {
-            background: linear-gradient(90deg, #7c3aed 0%, #c084fc 100%);
+            background: green;
             border-radius: 10px;
             height: 8px;
             transition: width 1s ease-in-out;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            padding: 24px 32px;
+            border-radius: 24px;
+            border: 1px solid #e5e7eb;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+            scrollbar-width: none;
+        }
+
+        .modal-content::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+
+        .modal-overlay.show .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .close-button {
+            color: #9ca3af;
+            font-size: 32px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #6b7280;
+        }
+
+        @media (max-width: 500px) {
+            .mobile-button {
+                display: none !important;
+            }
         }
     </style>
 </head>
 
 <body class="font-sans antialiased bg-white">
     <!-- Navigation -->
-    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-lg border-b border-gray-100/50 shadow-sm">
+    <header id="main-header" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300">
         <nav class="container mx-auto container-mobile">
             <div class="flex items-center justify-between h-14 sm:h-16">
-                <!-- Logo -->
                 <a href="../index.html" class="flex items-center space-x-2 z-10">
-                    <img src="../public/glimsBlue.svg" alt="logo" width="140px">
+                    <img id="header-logo" src="../public/glimsWhite.svg" alt="logo" width="170px">
                 </a>
 
-                <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center space-x-8">
                     <a href="../index.html"
-                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Home</a>
+                        class="text-white hover:text-green-300 font-medium transition-colors duration-200 text-sm header-link">Home</a>
                     <a href="../index.html#services"
-                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Services</a>
+                        class="text-white hover:text-green-300 font-medium transition-colors duration-200 text-sm header-link">Services</a>
                     <a href="../index.html#about"
-                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">About</a>
+                        class="text-white hover:text-green-300 font-medium transition-colors duration-200 text-sm header-link">About</a>
                     <a href="../index.html#team"
-                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Team</a>
+                        class="text-white hover:text-green-300 font-medium transition-colors duration-200 text-sm header-link">Team</a>
                     <a href="../index.html#contact"
-                        class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200 text-sm">Contact</a>
+                        class="text-white hover:text-green-300 font-medium transition-colors duration-200 text-sm header-link">Contact</a>
                 </div>
 
                 <!-- CTA Button -->
                 <div class="hidden sm:flex items-center space-x-3">
                     <span
-                        class="hidden md:block bg-purple-50 text-purple-700 text-xs px-3 py-1 rounded-full font-medium">
+                        class="hidden md:block bg-purple-50 text-green-600 text-xs px-3 py-1 rounded-full font-medium">
                         💰 Smart Savings
                     </span>
                     <button
-                        class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2 text-sm">
+                        class="bg-gradient-to-r from-green-500 to-green-700 hover:scale-[1.05] text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2 text-sm hidden lg:flex">
                         <span>Start Saving</span>
                         <i data-lucide="arrow-right" class="w-3 h-3 sm:w-4 sm:h-4"></i>
                     </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
-                    <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
-                </button>
+                <div class="flex justify-center items-center gap-6 lg:hidden">
+                    <button
+                        class="bg-gradient-to-r from-green-500 to-green-700 hover:scale-[1.05] text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-all duration-200 flex items-center space-x-2 text-sm mobile-button">
+                        <span>Start Saving</span>
+                        <i data-lucide="arrow-right" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg bg-gray-100 transition-colors">
+                        <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+                    </button>
+                </div>
             </div>
         </nav>
 
@@ -171,25 +258,25 @@
                 <div class="flex-1 p-4 sm:p-6 overflow-y-auto min-h-[50vh] overflow-y-auto bg-white">
                     <nav class="space-y-1">
                         <a href="../index.html"
-                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Home</a>
+                            class="block text-gray-700 hover:text-green-600 hover:bg-green-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Home</a>
                         <a href="../index.html#services"
-                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Services</a>
+                            class="block text-gray-700 hover:text-green-600 hover:bg-green-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Services</a>
                         <a href="../index.html#about"
-                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">About</a>
+                            class="block text-gray-700 hover:text-green-600 hover:bg-green-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">About</a>
                         <a href="../index.html#team"
-                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Team</a>
+                            class="block text-gray-700 hover:text-green-600 hover:bg-green-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Team</a>
                         <a href="../index.html#contact"
-                            class="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Contact</a>
+                            class="block text-gray-700 hover:text-green-600 hover:bg-green-50 font-medium py-3 px-3 rounded-lg transition-all duration-200">Contact</a>
                     </nav>
 
                     <div class="mt-8">
                         <h3 class="font-semibold text-gray-900 mb-3 px-3">Other Services</h3>
                         <div class="space-y-1">
                             <a href="currency-exchange.html"
-                                class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Currency
+                                class="block text-sm text-gray-600 hover:text-green-600 hover:bg-green-50 py-2 px-3 rounded-lg transition-all duration-200">Currency
                                 Exchange</a>
                             <a href="flight-booking.html"
-                                class="block text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 py-2 px-3 rounded-lg transition-all duration-200">Flight
+                                class="block text-sm text-gray-600 hover:text-green-600 hover:bg-green-50 py-2 px-3 rounded-lg transition-all duration-200">Flight
                                 Booking</a>
                         </div>
                     </div>
@@ -197,7 +284,7 @@
 
                 <div class="p-4 sm:p-6 border-t bg-gray-50">
                     <button
-                        class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2">
+                        class="w-full bg-gradient-to-r from-green-400 to-green-600 hover:scale-[1.05] text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2">
                         <span>Start Saving</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
@@ -207,37 +294,38 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-16 sm:pt-20 pb-12 sm:pb-20 hero-gradient min-h-screen flex items-center">
+    <section class="pt-16 sm:pt-20 pb-12 sm:pb-20 bg-targetsaving min-h-screen flex items-center relative">
+        <div class="absolute left-0 top-0 bg-green-800/20 w-full h-full"></div>
         <div class="container mx-auto container-mobile">
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                 <!-- Hero Content -->
                 <div class="flex-1 text-center lg:text-left fade-in">
                     <div
-                        class="bg-purple-50 text-purple-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-4 sm:mb-6 font-medium">
+                        class="bg-purple-50 text-green-600 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-4 sm:mb-6 font-medium">
                         💰 Smart Target Savings
                     </div>
 
                     <h1
-                        class="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
+                        class="text-white text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
                         Achieve your
-                        <span class="block gradient-text mt-1 sm:mt-2">
+                        <span class="block text-green-400 mt-1 sm:mt-2">
                             financial goals
                         </span>
                     </h1>
 
-                    <p class="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
+                    <!-- <p class="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
                         Set savings targets and watch your money grow with our smart automated savings system.
                         Competitive interest rates, flexible plans, and goal tracking to help you succeed.
-                    </p>
+                    </p> -->
 
                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                         <button
-                            class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl">
+                            class="bg-gradient-to-r from-green-500 to-green-700 hover:scale-[1.05] text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl">
                             <span>Start Saving Today</span>
                             <i data-lucide="piggy-bank" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                         </button>
-                        <button
-                            class="border-2 border-gray-200 hover:border-purple-300 text-gray-700 hover:text-purple-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 hover:bg-purple-50">
+                        <button id="openSavingsCalculatorBtn"
+                            class="border-2 border-gray-200 hover:border-purple-300 text-white hover:text-[#0F3B7A] text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 hover:bg-purple-50">
                             Calculate Savings
                         </button>
                     </div>
@@ -246,100 +334,97 @@
                     <div class="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600">
                         <div class="flex items-center gap-2">
                             <i data-lucide="shield-check" class="w-4 h-4 sm:w-5 sm:h-5 text-green-500"></i>
-                            <span>NDIC Insured</span>
+                            <span class="text-white/80">NDIC Insured</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <i data-lucide="target" class="w-4 h-4 sm:w-5 sm:h-5 text-blue-500"></i>
-                            <span>Goal Tracking</span>
+                            <span span class="text-white/80">Goal Tracking</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <i data-lucide="trending-up" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-500"></i>
-                            <span>Up to 15% Returns</span>
+                            <span span class="text-white/80">Up to 15% Returns</span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Savings Calculator -->
-                <div class="flex-1 relative fade-in mt-8 lg:mt-0">
-                    <div
-                        class="bg-white border border-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-lg mx-auto shadow-2xl">
-                        <div class="text-center mb-6">
-                            <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Savings Calculator</h3>
-                            <p class="text-gray-600 text-sm sm:text-base">See how your savings can grow</p>
-                        </div>
-
-                        <div class="space-y-4 sm:space-y-6">
-                            <!-- Goal Setting -->
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Savings Goal</label>
-                                <div class="relative">
-                                    <span
-                                        class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₦</span>
-                                    <input type="number" placeholder="500,000"
-                                        class="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg font-semibold">
-                                </div>
-                            </div>
-
-                            <!-- Time Period -->
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Time Period</label>
-                                <select
-                                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                    <option>6 months</option>
-                                    <option>12 months</option>
-                                    <option>18 months</option>
-                                    <option>24 months</option>
-                                </select>
-                            </div>
-
-                            <!-- Progress Visualization -->
-                            <div class="bg-gray-50 rounded-lg p-4">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="text-sm font-medium text-gray-700">Monthly Contribution</span>
-                                    <span class="text-lg font-bold text-purple-600">₦85,000</span>
-                                </div>
-                                <div class="bg-gray-200 rounded-full h-2 mb-3">
-                                    <div class="progress-bar w-3/4"></div>
-                                </div>
-                                <div class="text-xs text-gray-600">
-                                    <span>Expected return: ₦45,000 (9% annually)</span>
-                                </div>
-                            </div>
-
-                            <!-- Sample Progress -->
-                            <div class="space-y-3">
-                                <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm font-medium text-purple-700">Current Balance</span>
-                                        <span class="text-lg font-bold text-purple-600">₦425,000</span>
-                                    </div>
-                                    <div class="text-xs text-purple-600 mt-1">85% of your goal achieved!</div>
-                                </div>
-                            </div>
-
-                            <button
-                                class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 mt-6">
-                                <span>Create Savings Plan</span>
-                                <i data-lucide="target" class="w-4 h-4"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Floating elements -->
-                    <div class="absolute -top-6 -right-6 text-purple-600 animate-bounce-slow">
-                        <i data-lucide="coins" class="w-8 h-8"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <div id="savingsCalculatorModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+
+            <div class="flex-1 relative fade-in">
+                <div class="text-center mb-6">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Savings Calculator</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">See how your savings can grow</p>
+                </div>
+
+                <div class="space-y-4 sm:space-y-6">
+                    <div>
+                        <label for="savingsGoal" class="block text-sm font-medium text-gray-700 mb-2">Savings
+                            Goal</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">₦</span>
+                            <input type="number" id="savingsGoal" placeholder="500,000"
+                                class="w-full pl-8 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0F3B7A] outline-none focus:border-transparent text-lg font-semibold">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="timePeriod" class="block text-sm font-medium text-gray-700 mb-2">Time Period</label>
+                        <select id="timePeriod"
+                            class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#0F3B7A] outline-none focus:border-transparent">
+                            <option value="6">6 months</option>
+                            <option value="12">12 months</option>
+                            <option value="18">18 months</option>
+                            <option value="24">24 months</option>
+                        </select>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-4 fade-in">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium text-gray-700">Monthly Contribution</span>
+                            <span id="monthlyContributionDisplay" class="text-lg font-bold text-[#0F3B7A]">₦0</span>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 mb-3">
+                            <div id="progressBar" class="progress-bar w-0"></div>
+                        </div>
+                        <div class="text-xs text-gray-600">
+                            <span id="expectedReturnDisplay">Expected return: ₦0 (9% annually)</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 fade-in">
+                        <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-green-600">Current Balance</span>
+                                <span id="currentBalanceDisplay" class="text-lg font-bold text-[#0F3B7A]">₦0</span>
+                            </div>
+                            <div id="goalAchievedMessage" class="text-xs text-[#0F3B7A] mt-1"></div>
+                        </div>
+                    </div>
+
+                    <button id="createSavingsPlanBtn"
+                        class="w-full bg-gradient-to-r from-green-500 to-green-700 hover:scale-[1.05] text-white py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 mt-6 fade-in">
+                        <span>Create Savings Plan</span>
+                        <i data-lucide="target" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="absolute -top-6 -right-6 text-[#0F3B7A] animate-bounce-slow">
+                <i data-lucide="coins" class="w-8 h-8"></i>
+            </div>
+        </div>
+    </div>
+
     <!-- How It Works -->
     <section class="py-12 sm:py-20 bg-white">
         <div class="container mx-auto container-mobile">
             <div class="text-center mb-12 sm:mb-16 fade-in">
                 <div
-                    class="bg-blue-100 text-blue-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">
+                    class="bg-orange-100 text-[#f3931c] text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">
                     How It Works</div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
                     Simple Steps to Financial Success
@@ -355,7 +440,7 @@
                     class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in relative">
                     <div class="relative mb-4 sm:mb-6">
                         <div
-                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
+                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-green-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
                             <i data-lucide="target" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
                         </div>
                         <div
@@ -373,7 +458,7 @@
                     class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in relative">
                     <div class="relative mb-4 sm:mb-6">
                         <div
-                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
+                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#0F3B7A] mx-auto flex items-center justify-center mb-4 shadow-lg">
                             <i data-lucide="calendar" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
                         </div>
                         <div
@@ -391,7 +476,7 @@
                     class="bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 text-center card-hover shadow-lg fade-in relative">
                     <div class="relative mb-4 sm:mb-6">
                         <div
-                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-600 mx-auto flex items-center justify-center mb-4 shadow-lg">
+                            class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#f3931c] mx-auto flex items-center justify-center mb-4 shadow-lg">
                             <i data-lucide="trending-up" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
                         </div>
                         <div
@@ -412,7 +497,7 @@
         <div class="container mx-auto container-mobile">
             <div class="text-center mb-12 sm:mb-16 fade-in">
                 <div
-                    class="bg-purple-100 text-purple-700 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">
+                    class="bg-orange-100 text-[#f3931c] text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full inline-block mb-3 sm:mb-4 font-medium">
                     Savings Plans</div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
                     Choose Your Perfect Plan
@@ -426,42 +511,42 @@
                 <!-- Basic Plan -->
                 <div class="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 card-hover shadow-lg fade-in">
                     <div class="text-center">
-                        <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <i data-lucide="piggy-bank" class="w-8 h-8 text-green-600"></i>
+                        <div class="w-16 h-16 bg-orange-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <i data-lucide="piggy-bank" class="w-8 h-8 text-[#f3931c]"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Basic Saver</h3>
-                        <div class="text-3xl font-bold text-green-600 mb-4">6%</div>
+                        <div class="text-3xl font-bold text-[#f3931c] mb-4">6%</div>
                         <p class="text-gray-600 text-sm mb-6">Annual interest rate</p>
                     </div>
 
                     <div class="space-y-3 mb-8">
                         <div class="flex items-center gap-3">
-                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <i data-lucide="check" class="w-5 h-5 text-[#f3931c]"></i>
                             <span class="text-sm text-gray-700">Minimum ₦5,000</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <i data-lucide="check" class="w-5 h-5 text-[#f3931c]"></i>
                             <span class="text-sm text-gray-700">Flexible withdrawals</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <i data-lucide="check" class="w-5 h-5 text-[#f3931c]"></i>
                             <span class="text-sm text-gray-700">Mobile app access</span>
                         </div>
                         <div class="flex items-center gap-3">
-                            <i data-lucide="check" class="w-5 h-5 text-green-500"></i>
+                            <i data-lucide="check" class="w-5 h-5 text-[#f3931c]"></i>
                             <span class="text-sm text-gray-700">Goal tracking</span>
                         </div>
                     </div>
 
                     <button
-                        class="w-full border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-3 rounded-lg font-medium transition-all duration-200">
+                        class="w-full border-2 border-[#f3931c] text-[#f3931c] hover:bg-[#f3931c] hover:text-white py-3 rounded-lg font-medium transition-all duration-200">
                         Get Started
                     </button>
                 </div>
 
                 <!-- Premium Plan -->
                 <div
-                    class="bg-gradient-to-br from-purple-600 to-pink-600 text-white rounded-2xl p-6 sm:p-8 card-hover shadow-lg fade-in relative">
+                    class="bg-gradient-to-br from-green-500 to-green-700 text-white rounded-2xl p-6 sm:p-8 card-hover shadow-lg fade-in relative">
                     <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
                         <span class="bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">Most
                             Popular</span>
@@ -496,7 +581,7 @@
                     </div>
 
                     <button
-                        class="w-full bg-white text-purple-600 hover:bg-gray-100 py-3 rounded-lg font-medium transition-all duration-200">
+                        class="w-full bg-white text-green-600 hover:bg-gray-100 py-3 rounded-lg font-medium transition-all duration-200">
                         Start Saving
                     </button>
                 </div>
@@ -541,7 +626,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-12 sm:py-20 bg-gradient-to-r from-purple-600 via-pink-600 to-purple-700 text-white">
+    <section class="py-12 sm:py-20 bg-gradient-to-r from-green-500 to-green-700 text-white">
         <div class="container mx-auto container-mobile text-center">
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
                 Start building your future today
@@ -551,12 +636,12 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
-                    class="bg-white text-purple-600 hover:bg-gray-100 hover:text-purple-700 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 mx-auto sm:mx-0 shadow-lg hover:shadow-xl">
+                    class="bg-white text-[#0F3B7A] hover:bg-gray-100 hover:text-green-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 mx-auto sm:mx-0 shadow-lg hover:shadow-xl">
                     <span>Start Saving Now</span>
                     <i data-lucide="piggy-bank" class="w-4 h-4 sm:w-5 sm:h-5"></i>
                 </button>
                 <button
-                    class="border-2 border-white text-white hover:bg-white hover:text-purple-600 text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 mx-auto sm:mx-0">
+                    class="border-2 border-white text-white hover:bg-white hover:text-[#0F3B7A] text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-medium transition-all duration-300 mx-auto sm:mx-0">
                     Calculate Returns
                 </button>
             </div>
@@ -629,10 +714,81 @@
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
 
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
 
-        // Mobile menu functionality
+        const openBtn = document.getElementById('openSavingsCalculatorBtn');
+        const modal = document.getElementById('savingsCalculatorModal');
+        const closeBtn = document.querySelector('.close-button');
+        const savingsGoalInput = document.getElementById('savingsGoal');
+        const timePeriodSelect = document.getElementById('timePeriod');
+        const monthlyContributionDisplay = document.getElementById('monthlyContributionDisplay');
+        const expectedReturnDisplay = document.getElementById('expectedReturnDisplay');
+        const currentBalanceDisplay = document.getElementById('currentBalanceDisplay');
+        const progressBar = document.getElementById('progressBar');
+        const goalAchievedMessage = document.getElementById('goalAchievedMessage');
+
+        function showModal() {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+            calculateSavings(); // Calculate on modal open to show initial state
+        }
+
+        function hideModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        openBtn.addEventListener('click', showModal);
+        closeBtn.addEventListener('click', hideModal);
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                hideModal();
+            }
+        });
+
+        function calculateSavings() {
+            const goal = parseFloat(savingsGoalInput.value);
+            const months = parseInt(timePeriodSelect.value);
+            const annualInterestRate = 0.09;
+
+            if (isNaN(goal) || goal <= 0 || isNaN(months) || months <= 0) {
+                monthlyContributionDisplay.textContent = '₦0';
+                expectedReturnDisplay.textContent = 'Expected return: ₦0 (9% annually)';
+                currentBalanceDisplay.textContent = '₦0';
+                goalAchievedMessage.textContent = '';
+                progressBar.style.width = '0%';
+                return;
+            }
+
+            const monthlyContribution = goal / months;
+
+            const totalInterest = goal * (annualInterestRate / 12) * months;
+            const expectedTotal = goal + totalInterest;
+
+            monthlyContributionDisplay.textContent = `₦${monthlyContribution.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+            expectedReturnDisplay.textContent = `Expected return: ₦${totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })} (9% annually)`;
+
+            const demoCurrentBalance = goal * 0.85;
+            currentBalanceDisplay.textContent = `₦${demoCurrentBalance.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+
+            const progressPercentage = (demoCurrentBalance / goal) * 100;
+            progressBar.style.width = `${Math.min(progressPercentage, 100)}%`;
+
+            if (progressPercentage >= 100) {
+                goalAchievedMessage.textContent = 'Congratulations! Goal achieved!';
+                goalAchievedMessage.classList.remove('text-[#0F3B7A]');
+                goalAchievedMessage.classList.add('text-green-600');
+            } else {
+                goalAchievedMessage.textContent = `${Math.round(progressPercentage)}% of your goal achieved!`;
+                goalAchievedMessage.classList.remove('text-green-600');
+                goalAchievedMessage.classList.add('text-[#0F3B7A]');
+            }
+        }
+
+        savingsGoalInput.addEventListener('input', calculateSavings);
+        timePeriodSelect.addEventListener('change', calculateSavings);
+
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -654,13 +810,11 @@
         mobileMenuClose.addEventListener('click', closeMobileMenu);
         mobileMenuOverlay.addEventListener('click', closeMobileMenu);
 
-        // Close mobile menu when clicking on links
         const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // Fade in animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -678,14 +832,12 @@
             observer.observe(el);
         });
 
-        // Close mobile menu on escape key
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
                 closeMobileMenu();
             }
         });
 
-        // Add loading animation to buttons
         document.querySelectorAll('button').forEach(button => {
             button.addEventListener('click', function () {
                 this.style.transform = 'scale(0.95)';
@@ -695,14 +847,42 @@
             });
         });
 
-        // Progress bar animation
-        window.addEventListener('load', function () {
-            setTimeout(() => {
-                const progressBar = document.querySelector('.progress-bar');
-                if (progressBar) {
-                    progressBar.style.width = '85%';
+        const header = document.getElementById('main-header');
+        const headerLogo = document.getElementById('header-logo');
+        const navLinks = document.querySelectorAll('#main-header .header-link');
+
+        const initialLogoSrc = '../public/glimsWhite.svg';
+        const scrolledLogoSrc = '../public/glimsBlue.svg';
+
+        const scrollThreshold = 20;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
+                header.classList.remove('bg-transparent');
+                header.classList.add('bg-white', 'shadow-md');
+
+                if (headerLogo.src !== scrolledLogoSrc) {
+                    headerLogo.src = scrolledLogoSrc;
                 }
-            }, 1000);
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white', 'hover:text-blue-200');
+                    link.classList.add('text-black', 'hover:text-gray-600');
+                });
+
+            } else {
+                header.classList.remove('bg-white', 'shadow-md');
+                header.classList.add('bg-transparent');
+
+                if (headerLogo.src !== initialLogoSrc) {
+                    headerLogo.src = initialLogoSrc;
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-black', 'hover:text-gray-600');
+                    link.classList.add('text-white', 'hover:text-blue-200');
+                });
+            }
         });
     </script>
 </body>
