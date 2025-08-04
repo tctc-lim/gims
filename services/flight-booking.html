@@ -141,6 +141,13 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+
+            .gradient-text {
+            background: #2375f0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         }
 
         @media (max-width: 500px) {
@@ -255,7 +262,7 @@
 
     <!-- Hero Section -->
     <section class="pt-16 sm:pt-20 pb-12 relative sm:pb-20 bg-flight min-h-screen flex items-center">
-        <div class="absolute w-full h-full bg-[#0c1e2a]/40 left-0 top-0"></div>
+        <div class="absolute w-full h-full lg:bg-[#0c1e2a]/40 bg-black/70 left-0 top-0"></div>
         <div class="container mx-auto container-mobile">
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                 <div class="lg:w-1/2 w-full text-center lg:text-left fade-in">
@@ -900,7 +907,7 @@
             if (closeFlightSearchModalBtn) closeFlightSearchModalBtn.addEventListener('click', closeFlightSearchModal);
             if (modalOverlay) modalOverlay.addEventListener('click', closeFlightSearchModal);
 
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzB4P3r7puVzcbKQPOPYo3Lflt1dVVBb_ByqN15sUdhVeUrkrptUJNLP1AD8ZDawejbYw/exec';
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyXQCu3KlccFONiPhpucqXMJ8YICPTMIBLbfWglivK5haakolgr5VexGKKZqhjbDa6rIQ/exec';
             const inquiryForm = document.getElementById('inquiryForm');
             const submitBtn = document.getElementById('submitBtn');
             const submissionError = document.getElementById('submissionError');
